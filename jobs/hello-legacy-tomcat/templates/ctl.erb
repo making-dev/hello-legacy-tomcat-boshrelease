@@ -1,0 +1,34 @@
+#!/bin/bash
+
+JOB_NAME=hello-legacy-tomcat
+RUN_DIR=/var/vcap/sys/run/$JOB_NAME
+LOG_DIR=/var/vcap/sys/log/$JOB_NAME
+TOMCAT_HOME=/var/vcap/packages/tomcat
+PIDFILE=${RUN_DIR}/pid
+APP_LOG=/var/vcap/store/$JOB_NAME/log
+export JAVA_HOME=/var/vcap/packages/java
+export PATH=$PATH:$JAVA_HOME/bin
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR $APP_LOG
+    chown -R vcap:vcap $TOMCAT_HOME/ $RUN_DIR $LOG_DIR $APP_LOG
+    cp -a /var/vcap/packages/$JOB_NAME/ROOT.war $TOMCAT_HOME/webapps/
+    echo $$ > $PIDFILE
+    echo "[start] Calling Tomcat start up command"
+    exec chpst -u vcap:vcap $TOMCAT_HOME/bin/catalina.sh run
+    echo "[start] Tomcat start up in progress"
+    ;;
+
+  stop)
+    echo "[stop] Found UAA Tomcat PID file $PIDFILE - Killing `cat $PIDFILE`"
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

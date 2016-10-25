@@ -1,0 +1,6 @@
+---
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /tmp/hello-legacy-tomcat
+final_name: hello-legacy-tomcat

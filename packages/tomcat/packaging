@@ -1,0 +1,10 @@
+# abort script on any command that exits with a non zero value
+set -e
+
+TOMCAT=apache-tomcat-8.0.38
+cd ${BOSH_INSTALL_TARGET}
+tar xzvf ${BOSH_COMPILE_TARGET}/tomcat/${TOMCAT}.tar.gz
+mv ${TOMCAT}/* ./
+rm -rf ${TOMCAT}
+cd webapps
+rm -rf ROOT docs examples host-manager manager

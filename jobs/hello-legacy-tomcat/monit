@@ -1,0 +1,5 @@
+check process hello-legacy-tomcat
+  with pidfile /var/vcap/sys/run/hello-legacy-tomcat/pid
+  start program "/var/vcap/jobs/hello-legacy-tomcat/bin/ctl start"
+  stop program "/var/vcap/jobs/hello-legacy-tomcat/bin/ctl stop"
+  group vcap

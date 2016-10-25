@@ -1,0 +1,4 @@
+# abort script on any command that exits with a non zero value
+set -e
+export TOMCAT_HOME=$(cd "/var/vcap/packages/tomcat" && pwd -P)
+cp -a hello-legacy-tomcat/hello-legacy-tomcat-1.0.war $BOSH_INSTALL_TARGET/ROOT.war

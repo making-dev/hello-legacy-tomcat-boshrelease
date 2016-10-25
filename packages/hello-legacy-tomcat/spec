@@ -1,0 +1,7 @@
+---
+name: hello-legacy-tomcat
+
+dependencies:
+- tomcat
+files:
+- hello-legacy-tomcat/hello-legacy-tomcat-1.0.war # https://github.com/making/hello-legacy-tomcat/releases/download/1.0/hello-legacy-tomcat-1.0.war

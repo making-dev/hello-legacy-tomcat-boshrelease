@@ -1,0 +1,8 @@
+---
+name: hello-legacy-tomcat
+templates:
+  ctl.erb: bin/ctl
+packages:
+- hello-legacy-tomcat
+- java
+- tomcat
