@@ -1,0 +1,27 @@
+---
+packages:
+- name: hello-legacy-tomcat
+  version: 9a3f61ae2d9ac62bed2d6ac8daf7c5e9d87b75a4
+  fingerprint: 9a3f61ae2d9ac62bed2d6ac8daf7c5e9d87b75a4
+  sha1: cc7df4089e7bc13b08683d936cab6e87bfa6c45c
+  dependencies:
+  - tomcat
+- name: java
+  version: 36c812837a1e61d7393c84a0a2c5270eb1ae51af
+  fingerprint: 36c812837a1e61d7393c84a0a2c5270eb1ae51af
+  sha1: e27127547e719effd9e3da8f1582c54196eb07ef
+  dependencies: []
+- name: tomcat
+  version: 3055087aee0f5ee08ea6412b921c6d92f19797b5
+  fingerprint: 3055087aee0f5ee08ea6412b921c6d92f19797b5
+  sha1: 7044cb922b77e131f02deac381406663fff0ab72
+  dependencies: []
+jobs:
+- name: hello-legacy-tomcat
+  version: 95dad1f55e9bce7b3650bf6f055854e03df63161
+  fingerprint: 95dad1f55e9bce7b3650bf6f055854e03df63161
+  sha1: 948de45ecb494dcb283f472159ea31f7838fb4d6
+commit_hash: 82c0b1a9
+uncommitted_changes: true
+name: hello-legacy-tomcat
+version: '0.1'
