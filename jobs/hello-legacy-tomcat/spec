@@ -6,3 +6,4 @@ packages:
 - hello-legacy-tomcat
 - java
 - tomcat
+properties: {}
