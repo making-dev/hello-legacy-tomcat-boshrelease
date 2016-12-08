@@ -1,7 +1,7 @@
 # abort script on any command that exits with a non zero value
 set -e
 
-TOMCAT=apache-tomcat-8.0.38
+TOMCAT=apache-tomcat-8.0.39
 cd ${BOSH_INSTALL_TARGET}
 tar xzvf ${BOSH_COMPILE_TARGET}/tomcat/${TOMCAT}.tar.gz
 mv ${TOMCAT}/* ./

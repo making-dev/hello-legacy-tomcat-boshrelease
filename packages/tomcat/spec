@@ -4,4 +4,4 @@ name: tomcat
 dependencies:
 
 files:
-- tomcat/apache-tomcat-8.0.38.tar.gz # http://ftp.kddilabs.jp/infosystems/apache/tomcat/tomcat-8/v8.0.38/bin/apache-tomcat-8.0.38.tar.gz
+- tomcat/apache-tomcat-8.0.39.tar.gz # http://ftp.kddilabs.jp/infosystems/apache/tomcat/tomcat-8/v8.0.39/bin/apache-tomcat-8.0.39.tar.gz
