@@ -6,7 +6,9 @@ director_uuid: <%= `bosh status --uuid` %>
 releases:
 - name: hello-legacy-tomcat
   version: latest
-
+- name: routing
+  version: latest
+  
 stemcells:
 - os: ubuntu-trusty
   alias: ubuntu
@@ -17,14 +19,31 @@ instance_groups:
   jobs:
   - name: hello-legacy-tomcat
     release: hello-legacy-tomcat
+  - name: route_registrar
+    release: routing
+    properties:
+      route_registrar:
+        routes:
+        - name: hello-legacy-tomcat
+          port: 8080
+          registration_interval: 20s
+          tags:
+            component: hello-legacy-tomcat
+          uris:
+          - hello-legacy-tomcat.apps.pcf-lite.ik.am
+      nats:
+        user: nats
+        password: natsPassword
+        port: 4222
+        machines:
+        - 10.244.15.53
   instances: 1
   stemcell: ubuntu
-  azs: [z1]
-  vm_type: default
-  persistent_disk_type: default
+  azs: [az1]
+  vm_type: micro
+  persistent_disk_type: '5120'
   networks:
-  - name: default
-    static_ips: [10.244.0.12]
+  - name: ert
 
 update:
   canaries: 1
