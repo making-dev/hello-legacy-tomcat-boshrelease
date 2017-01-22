@@ -5,7 +5,7 @@ releases:
 - name: hello-legacy-tomcat
   version: 0.2
   url: https://github.com/making-dev/hello-legacy-tomcat-boshrelease/releases/download/0.2/hello-legacy-tomcat-0.2.tgz
-  sha1: e5fd66efe3f8a41ae5b9be86081c48541ba5eb5b
+  sha1: a401254722d4b032f0170b1d17ca3546fd611524
 
 stemcells:
 - alias: ubuntu
